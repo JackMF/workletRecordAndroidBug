@@ -16,7 +16,7 @@ const recordAndPlayBack = async() => {
   const recordedData=[];
   const recorderNode = new AudioWorkletNode(ctx, 'recorder')
   //recieve data from worklet
-  recorderNode.port.onmessage = (e) => {
+  recorderNode.port.onmessage = async (e) => {
     recordedData.push(e.data.value)
     
   }
